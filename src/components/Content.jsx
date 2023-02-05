@@ -3,8 +3,8 @@ import Desencriptar from "./Desencriptar"
 
 const Content = () => {
   return (
-    <main>
-        <div className='row g-5'>
+    <main className="container">
+        <div className='row'>
             <Encriptar />
             <Desencriptar />
         </div>
