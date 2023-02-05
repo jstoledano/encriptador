@@ -1,6 +1,17 @@
 const Encriptar = ({text, setText}) => {
   const handleForm = e => {
     e.preventDefault()
+
+    const llavesEncriptar = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+    let cadenaEncriptar = text.toLowerCase();
+
+    for(let i = 0; i < llavesEncriptar.length; i++) {
+      if(cadenaEncriptar.includes(llavesEncriptar[i][0])) {
+        cadenaEncriptar = cadenaEncriptar.replaceAll(llavesEncriptar[i][0], llavesEncriptar[i][1]);
+      }
+    }
+
+    setText(cadenaEncriptar);
   } 
 
   return (
@@ -15,7 +26,7 @@ const Encriptar = ({text, setText}) => {
             Escriba el texto a encriptar
           </label>
           <textarea 
-          onChange={e => setText(e.target.value)}
+            onChange={e => setText(e.target.value)}
             className="form-control" 
             id="textTo"
             placeholder="usa solo letras minúsculas"

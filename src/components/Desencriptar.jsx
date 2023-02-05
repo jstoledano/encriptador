@@ -1,7 +1,5 @@
 const Desencriptar = ({text, setText}) => {
 
-  console.log(text)
-
   return (
     <div className="col-sm-12 col-md-6">
       <h2>Desencriptar</h2>
@@ -10,7 +8,9 @@ const Desencriptar = ({text, setText}) => {
           <label htmlFor="textD" className="form-label">
             Texto encriptado
           </label>
-          <textarea className="form-control" id="textD" rows="3"></textarea>
+          <textarea
+            value={text}
+            className="form-control" id="textD" rows="3" />
         </div>
         <div className="row">
           <button className="btn btn-success float-end">
